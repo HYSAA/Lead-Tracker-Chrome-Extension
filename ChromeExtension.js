@@ -15,3 +15,6 @@ for (let i = 0; i < myLeads.length; i++) {
 function wait() {
 
 }
+const bard = () =>{
+    return
+}
