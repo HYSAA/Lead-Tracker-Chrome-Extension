@@ -12,9 +12,3 @@ for (let i = 0; i < myLeads.length; i++) {
     ulEl.textContent += myLeads[i] + " "
     console.log(myLeads[i])
 }
-function wait() {
-
-}
-const bard = () =>{
-    return
-}
