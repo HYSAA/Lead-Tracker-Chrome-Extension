@@ -8,8 +8,7 @@ btn.addEventListener("click", function () {
     inputEl.value=""
     renderLeads()
 })
-
-
+////mo render sa screen
 const renderLeads = () => {
 let listItems=" "
 for (let i = 0; i < myLeads.length; i++) {
