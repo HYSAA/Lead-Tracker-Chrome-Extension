@@ -37,3 +37,14 @@ button {
     background-color: #5f9341;
     color: azure;
 }
+a{
+    color: #5f9341;
+}
+li{
+    list-style: none;
+    padding-left: 0;
+  
+}
+ul{
+
+}
