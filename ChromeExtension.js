@@ -13,11 +13,10 @@ const ulEl = document.getElementById("ul-el")
 // localStorage.clear()
 // PS: both key and value need to be strings
 
-
-
-
-
-
+localStorage.setItem("myLeads","youtube.com")
+//set item para maka input ug links
+localStorage.clear
+console.log(localStorage.getItem("myLeads"))
 
 
 
