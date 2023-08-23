@@ -21,6 +21,7 @@ for (let i = 0; i < myLeads.length; i++) {
 }
 ulEl.innerHTML=listItems
 }
+//commit purposes
     // const list=document.createElement('list')
     // list.textContent=myLeads[i]
     // ulEl.append(list) 
