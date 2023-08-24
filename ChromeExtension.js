@@ -1,26 +1,23 @@
-let myLeads = []
+let myLeads = `["fn.com"]`
+// 1. Turn the myLeads string into an array
+// 2. Push a new value to the array
+// 3. Turn the array into a string again
+// 4. Console.log the string using typeof to verify that it's a string
+myLeads=JSON.parse(myLeads)//makes the string into an array
+myLeads.push("fb.com")
+myLeads=JSON.stringify(myLeads)//makes a array into a string
+console.log(typeof myLeads)
+
 const btn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 
-// 1. Save a key-value pair in localStorage
-// 2. Refresh the page. Get the value and log it to the console
-// 3. Clear localStorage
 
-// HINTS:
-// localStorage.setItem(key, value)
-// localStorage.getItem(key)
-// localStorage.clear()
-// PS: both key and value need to be strings
 
 localStorage.setItem("myLeads","youtube.com")
-//set item para maka input ug links
-localStorage.clear
-console.log(localStorage.getItem("myLeads"))
 
-
-
-
+let name= localStorage.getItem("myLeads")
+console.log(name)
 
 
 
