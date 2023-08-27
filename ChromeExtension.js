@@ -66,7 +66,9 @@ btn.addEventListener("click", function () {
 });
 
 delbtn.addEventListener("click", function () {
-  deleteEl();
+  myLeads = []; // Clear the array
+  ulEl.textContent = ""; // Clear the list content
+  localStorage.removeItem("myLeads"); // Remove data from localStorage
 });
 
 const renderLeads = () => {
