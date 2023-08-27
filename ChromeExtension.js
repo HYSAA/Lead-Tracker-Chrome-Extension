@@ -21,6 +21,8 @@ delbtn.addEventListener("dblclick", function () {
   myLeads = []; // Clear the array
   ulEl.textContent = ""; // Clear the list content
   localStorage.removeItem("myLeads"); // Remove data from localStorage
+  
+  
   //scrimba code
   // localStorage.clear()
   // myLeads=[]
