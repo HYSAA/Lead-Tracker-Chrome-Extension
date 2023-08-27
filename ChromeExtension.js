@@ -17,13 +17,14 @@ btn.addEventListener("click", function () {
 });
 
 delbtn.addEventListener("dblclick", function () {
-  //my code
-  // myLeads = []; // Clear the array
-  // ulEl.textContent = ""; // Clear the list content
-  // localStorage.removeItem("myLeads"); // Remove data from localStorage
-  localStorage.clear()
-  myLeads=[]
-  renderLeads()
+  // my code
+  myLeads = []; // Clear the array
+  ulEl.textContent = ""; // Clear the list content
+  localStorage.removeItem("myLeads"); // Remove data from localStorage
+  //scrimba code
+  // localStorage.clear()
+  // myLeads=[]
+  // renderLeads()
 
 });
 
