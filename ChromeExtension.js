@@ -5,13 +5,6 @@ const ulEl = document.getElementById("ul-el");
 const delbtn = document.getElementById("delete-btn");
 
 let myLeads = [];
-const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-if (leadsFromLocalStorage) {
-  myLeads = leadsFromLocalStorage;
-  renderLeads();
-}
-
-
 
 btn.addEventListener("click", function () {
   if (inputEl.value.trim() !== "") {
@@ -25,7 +18,7 @@ btn.addEventListener("click", function () {
 
 delbtn.addEventListener("dblclick", function () {
   // my code
-  myLeads = [];
+  myLeads = []; // Clear the array
   ulEl.textContent = ""; 
   localStorage.removeItem("myLeads"); 
   
@@ -50,8 +43,6 @@ const renderLeads = () => {
   }
   ulEl.innerHTML = listItems;
 };
-
-
 //unused function
 const deleteEl = () => {
   myLeads = []; // Clear the array
@@ -59,3 +50,8 @@ const deleteEl = () => {
   localStorage.removeItem("myLeads"); // Remove data from localStorage
 };
 
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+if (leadsFromLocalStorage) {
+  myLeads = leadsFromLocalStorage;
+  renderLeads();
+}
