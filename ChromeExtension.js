@@ -3,7 +3,7 @@ const btn = document.getElementById("input-btn");
 const inputEl = document.getElementById("input-el");
 const ulEl = document.getElementById("ul-el");
 const delbtn = document.getElementById("delete-btn");
-
+const savebtn=document.getElementById("save-btn")
 let myLeads = [];
 
 btn.addEventListener("click", function () {
@@ -15,6 +15,15 @@ btn.addEventListener("click", function () {
     console.log(localStorage.getItem("myLeads"));
   }
 });
+
+savebtn.addEventListener("click",function(){
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+    render(myLeads)
+  })
+
+})
 
 delbtn.addEventListener("dblclick", function () {
   // my code
@@ -50,8 +59,3 @@ const deleteEl = () => {
   localStorage.removeItem("myLeads"); // Remove data from localStorage
 };
 
-const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-if (leadsFromLocalStorage) {
-  myLeads = leadsFromLocalStorage;
-  renderLeads(myLeads);
-}
