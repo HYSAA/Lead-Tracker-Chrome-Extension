@@ -1,41 +1,34 @@
-
+let myLeads = [];
 const btn = document.getElementById("input-btn");
 const inputEl = document.getElementById("input-el");
 const ulEl = document.getElementById("ul-el");
 const delbtn = document.getElementById("delete-btn");
 const savebtn=document.getElementById("save-btn")
-let myLeads = [];
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
 btn.addEventListener("click", function () {
-  if (inputEl.value.trim() !== "") {
     myLeads.push(inputEl.value);
     inputEl.value = "";
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
     renderLeads(myLeads);
     console.log(localStorage.getItem("myLeads"));
-  }
+  
 });
 
 savebtn.addEventListener("click",function(){
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
     myLeads.push(tabs[0].url)
     localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    render(myLeads)
+    renderLeads(myLeads)
   })
 
 })
 
 delbtn.addEventListener("dblclick", function () {
-  // my code
-  myLeads = []; // Clear the array
-  ulEl.textContent = ""; 
-  localStorage.removeItem("myLeads"); 
-  
-  
-  //scrimba code
-  // localStorage.clear()
-  // myLeads=[]
-  // renderLeads()
+
+  localStorage.clear()
+  myLeads=[]
+  renderLeads(myLeads)
 
 });
 
@@ -51,11 +44,14 @@ const renderLeads = (leads) => {
     `;
   }
   ulEl.innerHTML = listItems;
-};
+};if (leadsFromLocalStorage) {
+  myLeads = leadsFromLocalStorage
+  renderLeads(myLeads)
+}
 //unused function
-const deleteEl = () => {
-  myLeads = []; // Clear the array
-  ulEl.textContent = ""; // Clear the list content
-  localStorage.removeItem("myLeads"); // Remove data from localStorage
-};
+// const deleteEl = () => {
+//   myLeads = []; // Clear the array
+//   ulEl.textContent = ""; // Clear the list content
+//   localStorage.removeItem("myLeads"); // Remove data from localStorage
+// };
 
