@@ -44,7 +44,8 @@ const renderLeads = (leads) => {
     `;
   }
   ulEl.innerHTML = listItems;
-};if (leadsFromLocalStorage) {
+};
+if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage
   renderLeads(myLeads)
 }
