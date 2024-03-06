@@ -5,7 +5,7 @@ const ulEl = document.getElementById("ul-el");
 const delbtn = document.getElementById("delete-btn");
 const savebtn=document.getElementById("save-btn")
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
-
+//lmaoo sayop 
 btn.addEventListener("click", function () {
     myLeads.push(inputEl.value);
     inputEl.value = "";
