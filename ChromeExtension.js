@@ -49,10 +49,3 @@ if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage
   renderLeads(myLeads)
 }
-//unused function
-// const deleteEl = () => {
-//   myLeads = []; // Clear the array
-//   ulEl.textContent = ""; // Clear the list content
-//   localStorage.removeItem("myLeads"); // Remove data from localStorage
-// };
-
