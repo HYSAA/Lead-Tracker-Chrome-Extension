@@ -48,6 +48,16 @@ button {
     border: 1px solid #0c3f76;
     font-weight: bold;
 }
+#ul-el{
+    vertical-align: top;
+    list-style-type: none;
+}
+#li{
+ 
+   
+    display: flex;
+    align-items: center;
+}
 
 /* Style the button according to the provided design
 

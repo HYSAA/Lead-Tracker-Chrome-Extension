@@ -41,6 +41,7 @@ const renderLeads = (leads) => {
   for (let i = 0; i < leads.length; i++) {
     listItems += `
       <li>
+        <input type= "checkbox" checked>
         <a target="_blank" href="${leads[i]}"> 
           ${leads[i]} 
         </a>
