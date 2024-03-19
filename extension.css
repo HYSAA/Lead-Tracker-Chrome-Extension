@@ -34,7 +34,7 @@ body {
 }
 
 input {
-    width: 100%;
+    width: calc(100% - 25px);
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #1cd4f5;
@@ -48,39 +48,19 @@ button {
     border: 1px solid #0c3f76;
     font-weight: bold;
 }
-#ul{
-    list-style-type: none;
-}
-
-li{
+#whole{
     display: flex;
-    align-items: center;
-    margin-bottom: 5px;
+    margin-right: 200px;
 }
 
-input[type="checkbox"]{
-    /* margin-right: 5px; */
-    margin-left: 20px;
+#whole input,
+#whole a {
+    flex: 3; /* Let both input and a tag flexibly fill the available space */
 }
-/* Style the button according to the provided design
-
-#delete-btn {
-    background: white;
-    color: #0c3f76
+input[type="checkbox"] {
+    margin-right: 5px; /* Adjust the margin between checkbox and text */
+    margin-top: 3px; /* Adjust vertical alignment if needed */
 }
 
-ul {
-    margin-top: 20px;
-    list-style: none;
-    padding-left: 0;
-}
 
-li {
-    margin-top: 5px;
-}
-
-a {
-    font-size: 20px;
-    color: #060505;
-}
 
