@@ -48,6 +48,7 @@ const renderLeads = (leads) => {
       </li>
     `;
   }
+  //asdasd
   ulEl.innerHTML = listItems;
 };
 if (leadsFromLocalStorage) {
