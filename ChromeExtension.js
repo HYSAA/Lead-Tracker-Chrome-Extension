@@ -28,13 +28,22 @@ savebtn.addEventListener("click",function(){
 
 })
 
-delbtn.addEventListener("dblclick", function () {
+// Attach event listeners to checkboxes for the "change" event
+ulEl.addEventListener("change", function(event) {
+  // Check if the changed element is a checkbox
+  if (event.target.type === "checkbox") {
+    const checkboxId = event.target.id;
+    const index = parseInt(checkboxId.split("-")[1]); // Extract the index from the checkbox ID
 
-  localStorage.clear()
-  myLeads=[]
-  renderLeads(myLeads)
-
+    // If the checkbox is unchecked, remove the corresponding data item
+    if (!event.target.checked) {
+      myLeads.splice(index, 1);
+      localStorage.setItem("myLeads", JSON.stringify(myLeads));
+      renderLeads(myLeads);
+    }
+  }
 });
+
 
 const renderLeads = (leads) => {
   let listItems = "";
@@ -51,6 +60,7 @@ const renderLeads = (leads) => {
   //asdasd
   ulEl.innerHTML = listItems;
 };
+
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage
   renderLeads(myLeads)
