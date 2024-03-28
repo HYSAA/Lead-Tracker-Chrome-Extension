@@ -19,6 +19,16 @@ btn.addEventListener("click", function () {
   
 });
 
+delbtn.addEventListener("dblclick",function()
+{
+  
+  localStorage.clear("myLeads")
+  myLeads=[];
+  renderLeads(myLeads)
+  console.log(myLeads)
+});
+
+
 savebtn.addEventListener("click",function(){
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
     myLeads.push(tabs[0].url)
@@ -34,7 +44,8 @@ ulEl.addEventListener("change", function(event) {
   if (event.target.type === "checkbox") {
     const checkboxId = event.target.id;
     const index = parseInt(checkboxId.split("-")[1]); // Extract the index from the checkbox ID
-
+   
+    console.log(index)
     // If the checkbox is unchecked, remove the corresponding data item
     if (!event.target.checked) {
       myLeads.splice(index, 1);
